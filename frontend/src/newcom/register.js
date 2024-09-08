@@ -70,7 +70,7 @@ const Registration = () => {
         const dataToSend = { ...formData, birthDate };
 
         try {
-            await axios.post('http://localhost:5000/api/students/create', dataToSend);
+            await axios.post('https://amdesilase-api.vercel.app/api/students/create', dataToSend);
             toast.success('Student registered successfully!');
             setFormData({
                 fullName: '',
