@@ -63,7 +63,7 @@ const NewNavbar = () => {
                 position="static" 
                 sx={{ 
                     backgroundColor: 'transparent', 
-                    width: '100%', 
+                    width: '95%', 
                     margin: 'auto', 
                     boxShadow: 'none'
                 }}
