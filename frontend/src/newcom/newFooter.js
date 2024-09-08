@@ -31,8 +31,12 @@ function Footer() {
                                 <strong>አድራሻ:</strong> Kotebe Kara, AddisAbaba, Ethiopia
                             </Typography>
                             <Typography variant="body2">
-                                <strong>ስልክ ቁጥር:</strong> +251912273705
+                                <strong>ስልክ ቁጥር:</strong>
+                                <Link href="tel:+251912273705" underline="hover">
+                                    +251912273705
+                                </Link>
                             </Typography>
+
                             <Typography variant="body2">
                                 <strong>E-mail:</strong>
                                 <Link href="mailto:amdesilase@gmail.com" underline="hover">
