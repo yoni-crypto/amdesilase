@@ -14,7 +14,7 @@ app.use(cors({
   credentials: true, // Allow credentials
   allowedHeaders: ['Content-Type', 'Authorization'], // Allow necessary headers
 }));
-
+app.options('*', cors());
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
