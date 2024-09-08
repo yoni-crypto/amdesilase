@@ -15,9 +15,7 @@ app.use(cors({
   credentials: true, // Allow credentials (e.g., cookies)
   allowedHeaders: ['Content-Type', 'Authorization'], // Allow necessary headers
 }));
-app.get('/', (req, res) {
-  res.send("hello");
-});
+app.get("/", (req, res) => { res.send("hello"); });
 app.options('*', cors());
 
 
