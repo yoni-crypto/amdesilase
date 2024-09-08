@@ -16,6 +16,9 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization'], // Allow necessary headers
 }));
 
+app.options('*', cors());
+
+
 
 // Middleware
 app.use(bodyParser.json());
