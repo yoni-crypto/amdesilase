@@ -52,7 +52,7 @@ export default function StudentDataGrid({ className }) {
     useEffect(() => {
         const fetchStudents = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/admin/students/class/${className}`);
+                const response = await axios.get(`https://amdesilase-api.vercel.app/api/admin/students/class/${className}`);
                 setStudents(response.data);
                 setLoading(false);
             } catch (error) {
@@ -77,7 +77,7 @@ export default function StudentDataGrid({ className }) {
 
     const handleDelete = async () => {
         try {
-            await axios.delete(`http://localhost:5000/api/students/delete/${studentToDelete._id}`);
+            await axios.delete(`https://amdesilase-api.vercel.app/api/students/delete/${studentToDelete._id}`);
             setStudents(students.filter(student => student._id !== studentToDelete._id));
             setConfirmDeleteOpen(false);
             toast.success('Student deleted successfully');
@@ -89,7 +89,7 @@ export default function StudentDataGrid({ className }) {
 
     const handleUpdate = async () => {
         try {
-            const response = await axios.put(`http://localhost:5000/api/students/update/${currentStudent._id}`, currentStudent);
+            const response = await axios.put(`https://amdesilase-api.vercel.app/api/students/update/${currentStudent._id}`, currentStudent);
             setStudents(students.map(student => (student._id === currentStudent._id ? response.data : student)));
             setDialogOpen(false);
             setCurrentStudent(null);

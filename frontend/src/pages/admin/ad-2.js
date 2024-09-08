@@ -69,7 +69,9 @@ function DemoPageContent({ pathname }) {
     React.useEffect(() => {
         const fetchTotalStudents = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/admin/students/totalCount');
+                // const response = await axios.get('http://localhost:5000/api/admin/students/totalCount');
+                const response = await axios.get('https://amdesilase-api.vercel.app/api/admin/students/totalCount');
+
                 setTotalStudents(response.data.totalCount);
             } catch (error) {
                 console.error("Failed to fetch total student count", error);

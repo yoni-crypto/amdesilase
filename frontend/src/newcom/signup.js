@@ -16,7 +16,7 @@ export default function Signup() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            await axios.post('http://localhost:5000/api/auth/register', { username, email, password });
+            await axios.post('https://amdesilase-api.vercel.app/api/auth/register', { username, email, password });
             toast.success('Registration successful!'); 
             navigate('/login'); 
         } catch (error) {

@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { TextField, Select, MenuItem, InputLabel, FormControl, Button, Grid, Typography, Box } from '@mui/material';
 import { styled } from '@mui/system';
@@ -70,7 +71,7 @@ const Registration = () => {
         const dataToSend = { ...formData, birthDate };
 
         try {
-            await axios.post('http://localhost:5000/api/students/create', dataToSend);
+            await axios.post('https://amdesilase-api.vercel.app/api/students/create', dataToSend);
             toast.success('Student registered successfully!');
             setFormData({
                 fullName: '',
@@ -295,4 +296,3 @@ const Registration = () => {
 };
 
 export default Registration;
-
