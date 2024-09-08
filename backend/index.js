@@ -25,8 +25,9 @@ app.use((req, res, next) => {
   }
 });
 
-
 app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+
 
 const PORT = process.env.PORT || 5000;
 // const MONGO_URI = 'mongodb+srv://yonidisu111:yoniyoye1.@amdeselase.bdsua.mongodb.net/?retryWrites=true&w=majority&appName=amdeselase';
