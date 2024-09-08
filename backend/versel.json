@@ -1,11 +1,11 @@
 {
   "headers": [
     {
-      "source": "/api/(.*)", // Match API routes
+      "source": "/api/(.*)",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
-          "value": "https://amdesilase.vercel.app" // Allow your frontend URL
+          "value": "https://amdesilase.vercel.app"
         },
         {
           "key": "Access-Control-Allow-Methods",
