@@ -52,7 +52,7 @@ export default function StudentDataGrid({ className }) {
     useEffect(() => {
         const fetchStudents = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/admin/students/class/${className}`);
+                const response = await axios.get(`https://amdesilase-api.vercel.app/api/admin/students/class/${className}`);
                 setStudents(response.data);
                 setLoading(false);
             } catch (error) {
