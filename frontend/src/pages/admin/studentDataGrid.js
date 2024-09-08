@@ -13,6 +13,14 @@ export default function StudentDataGrid({ className }) {
     const [confirmDeleteOpen, setConfirmDeleteOpen] = useState(false);
     const [studentToDelete, setStudentToDelete] = useState(null);
 
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
+        const year = date.getFullYear();
+        return `${day}/${month}/${year}`;
+    };
+
     const columns = [
         { field: 'id', headerName: 'ID', width: 70 },
         { field: 'fullName', headerName: 'ሙሉስም', width: 150 },
@@ -21,7 +29,7 @@ export default function StudentDataGrid({ className }) {
         {
             field: 'birthDate', headerName: 'የትውልድቀን', width: 150, renderCell: (params) => (
                 <div>
-                    {params.value} bbb
+                    {formatDate(params.value)}
                 </div>
             ),
         },
@@ -63,7 +71,7 @@ export default function StudentDataGrid({ className }) {
                 setLoading(false);
             } catch (error) {
                 console.error('Error fetching students:', error);
-                toast.error('Error fetching students')
+                toast.error('Error fetching students');
                 setLoading(false);
             }
         };
@@ -89,7 +97,7 @@ export default function StudentDataGrid({ className }) {
             toast.success('Student deleted successfully');
         } catch (error) {
             console.error('Error deleting student:', error);
-            toast.error('Error deleting student')
+            toast.error('Error deleting student');
         }
     };
 
@@ -99,10 +107,10 @@ export default function StudentDataGrid({ className }) {
             setStudents(students.map(student => (student._id === currentStudent._id ? response.data : student)));
             setDialogOpen(false);
             setCurrentStudent(null);
-            toast.success("Student detail updated successfully!")
+            toast.success("Student detail updated successfully!");
         } catch (error) {
             console.error('Error updating student:', error);
-            toast.error('Error updating student')
+            toast.error('Error updating student');
         }
     };
 
@@ -158,7 +166,7 @@ export default function StudentDataGrid({ className }) {
                                 <td>{student.fullName}</td>
                                 <td>{student.churchName}</td>
                                 <td>{student.sex}</td>
-                                <td>{student.birthDate}</td>
+                                <td>{formatDate(student.birthDate)}</td>
                                 <td>{student.age}</td>
                                 <td>{student.phoneNumber}</td>
                                 <td>{student.parentName}</td>
