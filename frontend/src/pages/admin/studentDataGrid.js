@@ -18,7 +18,13 @@ export default function StudentDataGrid({ className }) {
         { field: 'fullName', headerName: 'ሙሉስም', width: 150 },
         { field: 'churchName', headerName: 'የክርስትናስም', width: 120 },
         { field: 'sex', headerName: 'ጾታ', width: 100 },
-        { field: 'birthDate', headerName: 'የትውልድቀን', width: 150 },
+        {
+            field: 'birthDate', headerName: 'የትውልድቀን', width: 150, renderCell: (params) => (
+                <div>
+                    {params.value} bbb
+                </div>
+            ),
+        },
         { field: 'age', headerName: 'ዕድሜ', type: 'number', width: 80 },
         { field: 'phoneNumber', headerName: 'ስልክቁጥር', width: 150 },
         { field: 'parentName', headerName: 'የወላጅስም', width: 120 },
