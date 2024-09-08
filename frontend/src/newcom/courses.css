@@ -1,0 +1,20 @@
+.coursesContainer{
+    background-color: #f5f5f5;
+    padding: 5% 0%;
+
+}
+.courses {
+    padding: 20px;
+    width: 70%;
+    margin: auto;
+}
+
+.course-card {
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.course-card:hover {
+    transform: scale(1.05);
+}
