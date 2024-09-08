@@ -49,7 +49,7 @@ const Registration = () => {
 
     const years = Array.from({ length: 100 }, (_, i) => 2016 - i);
     const daysInMonth = (month) => {
-        if (month === 'Pagumē') return 6;
+        if (month === 'ጳጉሜን') return 6;
         return 30;
     };
 

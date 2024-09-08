@@ -19,9 +19,8 @@ export default function Login() {
             const response = await axios.post('https://amdesilase-api.vercel.app/api/auth/login', { email, password });
             const { token } = response.data;
 
-            localStorage.setItem('token', token); // Save token
+            localStorage.setItem('token', token); 
 
-            // Decode token to get user role
             const decodedToken = jwtDecode(token);
             if (decodedToken.role === 'admin') {
                 navigate('/admin'); // Redirect to admin page
@@ -29,9 +28,9 @@ export default function Login() {
                 navigate('/'); // Redirect to home page
             }
 
-            toast.success('Login successful!'); // Show success toast
+            toast.success('Login successful!'); 
         } catch (error) {
-            toast.error(error.response?.data?.message || 'Login failed'); // Show error toast
+            toast.error(error.response?.data?.message || 'Login failed'); 
             setError(error.response?.data?.message || 'Login failed');
         }
     };
