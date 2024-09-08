@@ -50,11 +50,11 @@ function Footer() {
                                 መልእክቶን ያስቀምጡ
                             </Typography>
                             <form>
-                                <TextField fullWidth label="Name" margin="normal" variant="outlined" sx={{ input: { maxWidth: '300px' } }} />
-                                <TextField fullWidth label="E-mail address" margin="normal" variant="outlined" sx={{ input: { maxWidth: '300px' } }} />
-                                <TextField fullWidth label="Message" multiline rows={4} margin="normal" variant="outlined" sx={{ input: { maxWidth: '300px' } }} />
+                                <TextField fullWidth label="ስም" margin="normal" variant="outlined" sx={{ input: { maxWidth: '300px' } }} />
+                                <TextField fullWidth label="ኢሜል " margin="normal" variant="outlined" sx={{ input: { maxWidth: '300px' } }} />
+                                <TextField fullWidth label="መልእክት" multiline rows={4} margin="normal" variant="outlined" sx={{ input: { maxWidth: '300px' } }} />
                                 <Button variant="contained" color="primary" fullWidth sx={{ mt: 2, maxWidth: '300px' }}>
-                                    Submit
+                                    ላክ
                                 </Button>
                             </form>
                             <Box sx={{ display: 'flex', justifyContent: 'space-around', mt: 2 }}>
