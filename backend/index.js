@@ -8,7 +8,7 @@ const authRoutes = require('./routes/authRoutes');
 
 const app = express();
 app.use(cors({
-  origin: ['http://localhost:3000'],
+  origin: ['https://amdesilase.vercel.app/'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials:true
 }));
