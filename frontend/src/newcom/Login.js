@@ -16,7 +16,7 @@ export default function Login() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+            const response = await axios.post('https://amdesilase-api.vercel.app/api/auth/login', { email, password });
             const { token } = response.data;
 
             localStorage.setItem('token', token); // Save token
