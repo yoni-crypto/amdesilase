@@ -8,10 +8,23 @@ const authRoutes = require('./routes/authRoutes');
 
 const app = express();
 app.use(cors({
-  origin: ['http://localhost:3000','https://amdesilase.vercel.app'],
+  origin: ['http://localhost:3000', 'https://amdesilase.vercel.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allow necessary headers
 }));
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://amdesilase.vercel.app');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  
+  if (req.method === 'OPTIONS') {
+    res.sendStatus(200); // Respond to preflight request
+  } else {
+    next(); // Pass to the next middleware
+  }
+});
+
 
 app.use(bodyParser.json());
 
