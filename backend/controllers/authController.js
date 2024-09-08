@@ -43,7 +43,7 @@ const login = async (req, res) => {
         }
 
         // Generate JWT token with user role
-        const token = jwt.sign({ id: user._id, role: user.role }, 'your_jwt_secret', { expiresIn: '1h' });
+        const token = jwt.sign({ id: user._id, role: user.role }, 'gjfhgsfeserstryteeeewy', { expiresIn: '1h' });
         res.status(200).json({ token });
     } catch (error) {
         res.status(400).json({ message: error.message });
