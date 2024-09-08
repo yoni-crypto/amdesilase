@@ -6,7 +6,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 
 function Footer() {
     return (
-        <div style={{backgroundColor:"#f0f0f0"}}>
+        <div style={{ backgroundColor: "#f0f0f0" }}>
             <Box sx={{
                 width: { xs: '100%', md: '80%' },
                 mx: 'auto',
@@ -25,11 +25,20 @@ function Footer() {
                                 ያግኙን
                             </Typography>
                             <Typography variant="body1">
-                            የካራሎ ደብረታቦር ቅድስት ሥላሴ ቅድስት ድንግል ማርያምና ቅድስት አርሴማ ቤተክርስቲያን ‹‹ዓምደ ሥላሴ›› ሰንበት ትምህርት ቤት 
+                                የካራሎ ደብረታቦር ቅድስት ሥላሴ ቅድስት ድንግል ማርያምና ቅድስት አርሴማ ቤተክርስቲያን ‹‹ዓምደ ሥላሴ›› ሰንበት ትምህርት ቤት
                             </Typography>
-                            <Typography variant="body2"><strong>አድራሻ:</strong> Kotebe Kara, AddisAbaba, Ethiopia</Typography>
-                            <Typography variant="body2"><strong>ስልክ ቁጥር:</strong> +123-456-7890</Typography>
-                            <Typography variant="body2"><strong>E-mail:</strong> amdeselase@gmail.com</Typography>
+                            <Typography variant="body2">
+                                <strong>አድራሻ:</strong> Kotebe Kara, AddisAbaba, Ethiopia
+                            </Typography>
+                            <Typography variant="body2">
+                                <strong>ስልክ ቁጥር:</strong> +251912273705
+                            </Typography>
+                            <Typography variant="body2">
+                                <strong>E-mail:</strong>
+                                <Link href="mailto:amdesilase@gmail.com" underline="hover">
+                                    amdesilase@gmail.com
+                                </Link>
+                            </Typography>
                         </Grid>
                         <Grid item xs={12} md={6}>
                             <Typography variant="h6" gutterBottom>
