@@ -21,7 +21,8 @@ const NewWelcome = () => {
                                 fontFamily: "'Amharic Serif', serif", 
                                 fontWeight: 700, 
                                 color: "#2C3E50",
-                                lineHeight: 1.2 
+                                lineHeight: 1.2,
+                                fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' } 
                             }}
                         >
                             እንኳን ወደ ዓምደ ሥላሴ ሰንበት ትምህርት ቤት በደህና መጣችሁ።
@@ -30,7 +31,7 @@ const NewWelcome = () => {
                             variant="body1" 
                             sx={{ 
                                 fontFamily: "'Amharic Serif', serif", 
-                                fontSize: "18px", 
+                                fontSize: { xs: '0.8rem', sm: '1rem', md: '1.1rem' }, 
                                 color: "#34495E", 
                                 marginBottom: "20px" 
                             }}
@@ -45,7 +46,7 @@ const NewWelcome = () => {
                                 color: "white", 
                                 padding: "10px 20px", 
                                 fontWeight: "bold",
-                                fontSize: "16px", 
+                                fontSize: { xs: '0.75rem', sm: '0.9rem', md: '1rem' }, 
                                 borderRadius: "30px", 
                                 boxShadow: "0 4px 15px rgba(0, 0, 0, 0.2)",
                                 '&:hover': {

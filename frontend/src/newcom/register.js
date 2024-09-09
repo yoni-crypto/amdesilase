@@ -6,6 +6,7 @@ import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import NewNavbar from './navbar';
+import Footer from './newFooter'
 
 const CustomGrid = styled(Grid)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
@@ -101,7 +102,7 @@ const Registration = () => {
         
         <FormContainer>
 
-            <Typography variant="h4" gutterBottom>
+            <Typography variant="h4" gutterBottom sx={{paddingTop:"50px"}}>
                 የተማሪ ምዝገባ
             </Typography>
             <form onSubmit={handleSubmit}>
@@ -290,6 +291,7 @@ const Registration = () => {
             </form>
             <ToastContainer />
         </FormContainer>
+        <Footer/>
         </div>
 
     );

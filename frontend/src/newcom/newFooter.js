@@ -20,7 +20,6 @@ function Footer() {
                     boxShadow: 'none'
                 }}>
                     <Grid container spacing={6}>
-                        {/* Contact Section */}
                         <Grid item xs={12} md={6}>
                             <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold', color: '#333' }}>
                                 ያግኙን
@@ -45,7 +44,6 @@ function Footer() {
                             </Typography>
                         </Grid>
 
-                        {/* Message Form Section */}
                         <Grid item xs={12} md={6}>
                             <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold', color: '#333' }}>
                                 መልእክቶን ያስቀምጡ
@@ -110,7 +108,6 @@ function Footer() {
                             </Box>
                         </Grid>
 
-                        {/* Map Section */}
                         <Grid item xs={12}>
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5938.673891165705!2d38.86480436312176!3d9.042084095154506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b90f76e0e945b%3A0x3efc503287fddf06!2zS2FyYWxvIFNlbGFzc2llIENodXJjaCB8IEtvdGViZSBLYXJhIHwg4Yqr4Yir4YiOIOGJheGLteGIteGJtSDhiKXhiIvhiLQg4Ymk4Ymw4Yqt4Yit4Yi14Ymy4Yur4YqVIHwg4Yqu4Ymw4YmkIOGKq-GIqw!5e0!3m2!1sen!2set!4v1719778700459"

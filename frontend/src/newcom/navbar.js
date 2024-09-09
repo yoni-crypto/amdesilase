@@ -47,48 +47,53 @@ const NewNavbar = () => {
         { label: 'ማስታወቂያ', path: '/comingsoon' },
         { label: 'ያግኙን', path: '/comingsoon' },
         { label: 'አባልይሁኑ', path: '/register' },
-        isAdmin && { label: 'Dashboard', path: '/admin' }, // Add Dashboard link if admin
-        { 
-            label: isLoggedIn ? 'Logout' : 'ይግቡ', 
-            path: isLoggedIn ? '#' : '/login', 
-            action: isLoggedIn ? handleLogout : undefined 
+        isAdmin && { label: 'Dashboard', path: '/admin' }, 
+        {
+            label: isLoggedIn ? 'Logout' : 'ይግቡ',
+            path: isLoggedIn ? '#' : '/login',
+            action: isLoggedIn ? handleLogout : undefined
         }
-    ].filter(Boolean); // Remove falsy values
+    ].filter(Boolean); 
 
     const drawerHeight = navLinks.length * 48;
+    const appBarHeight = 64; // Adjust based on the actual height of your AppBar
 
     return (
-        <div style={{ background: 'linear-gradient(45deg, #333, #555)' }}>
-            <AppBar 
-                position="static" 
-                sx={{ 
-                    backgroundColor: 'transparent', 
-                    width: '95%', 
-                    margin: 'auto', 
-                    boxShadow: 'none'
+        <div>
+            <AppBar
+                position="fixed"
+                sx={{
+                    backgroundColor: '#333',
+                    width: '100%',
+                    boxShadow: 'none',
+                    zIndex: 1300,
                 }}
-            > 
-                <Toolbar>
+            >
+                <Toolbar sx={{width:"95%",margin:"auto"}}>
                     <img
                         src={assets.eotcmk_logo}
                         alt="Logo"
                         style={{ width: 50, marginRight: '10px' }}
                     />
-                    <Typography 
-                        variant="h6" 
-                        sx={{ 
+                    <Typography
+                        variant="h6"
+                        sx={{
                             flexGrow: 1,
-                            color: '#fff' 
+                            color: '#fff',
+                            fontSize: { xs: '1rem', sm: '1.25rem', md: '1.3rem', lg: '1.3rem' }, 
+                            whiteSpace: 'nowrap', 
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis' 
                         }}
                     >
-                        ዓምደ ሥላሴ ሰንበት ትምህርት ቤት 
+                        ዓምደ ሥላሴ ሰንበት ትምህርት ቤት
                     </Typography>
                     <Box sx={{ display: { xs: 'none', md: 'block' } }}>
                         {navLinks.map((link) => (
                             <Typography
                                 key={link.path}
                                 variant="body1"
-                                sx={{ 
+                                sx={{
                                     marginRight: { md: '25px', lg: '35px' },
                                     display: 'inline-block',
                                     color: '#fff',
@@ -124,23 +129,23 @@ const NewNavbar = () => {
                         sx: {
                             height: drawerHeight,
                             backgroundColor: '#333',
-                            marginTop: '64px',
+                            marginTop: `${appBarHeight}px`, // Ensure it aligns with the Toolbar
                             borderRadius: '0 0 8px 8px',
                         }
                     }}
                 >
                     <List>
                         {navLinks.map((link) => (
-                            <ListItem 
-                                button 
-                                key={link.path} 
-                                component={link.path ? Link : 'span'} 
-                                to={link.path} 
+                            <ListItem
+                                button
+                                key={link.path}
+                                component={link.path ? Link : 'span'}
+                                to={link.path}
                                 onClick={link.action}
                             >
-                                <ListItemText 
-                                    primary={link.label} 
-                                    sx={{ 
+                                <ListItemText
+                                    primary={link.label}
+                                    sx={{
                                         color: 'white',
                                         textDecoration: 'none',
                                         '&:hover': {
@@ -154,6 +159,9 @@ const NewNavbar = () => {
                     </List>
                 </Drawer>
             </AppBar>
+
+            {/* Adjust padding-top dynamically for different screen sizes */}
+           
         </div>
     );
 };

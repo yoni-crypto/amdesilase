@@ -15,6 +15,10 @@
     background-color: white;
 }
 
+.smooth-transition {
+    transition: background-image 3s ease-in-out;
+}
+
 @media (min-width: 768px) {
     .dot {
         width: 15px;

@@ -49,11 +49,11 @@ const Courses = () => {
                 <Typography
                     style={{
                         marginBottom: "30px",
-                        fontSize: "2.2rem",  // Larger title for a more impactful look
-                        fontWeight: "bold",  // Make it bold for emphasis
-                        color: "#333",  // Darker text color for contrast
+                        fontSize: "2.2rem",  
+                        fontWeight: "bold", 
+                        color: "#333",  
                         '@media (max-width:600px)': {
-                            fontSize: "1.3rem",  // Smaller size on small screens
+                            fontSize: "1.3rem",
                         }
                     }}
                     variant="h5"
@@ -69,9 +69,9 @@ const Courses = () => {
                                 ref={(el) => (courseRefs.current[index] = el)}
                                 className='course-card'
                                 sx={{
-                                    backgroundColor: "#fafafa",  // Light background for contrast
-                                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",  // Light shadow for depth
-                                    transition: "transform 0.3s, box-shadow 0.3s",  // Smooth hover transitions
+                                    backgroundColor: "#fafafa",  
+                                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",  
+                                    transition: "transform 0.3s, box-shadow 0.3s",  
                                 }}
                             >
                                 <CardContent>
@@ -79,9 +79,9 @@ const Courses = () => {
                                         variant="h6"
                                         align="center"
                                         sx={{
-                                            fontSize: "1.25rem",  // Adjusted font size
-                                            fontWeight: "500",  // Medium weight for better readability
-                                            color: "#555",  // Softer color for the text
+                                            fontSize: "1.25rem",  
+                                            fontWeight: "500", 
+                                            color: "#555",  
                                         }}
                                     >
                                         {course}

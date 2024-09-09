@@ -17,7 +17,7 @@ const createStudent = async (req, res) => {
         const existingStudent = await Student.findOne({ fullName, churchName });
 
         if (existingStudent) {
-            return res.status(409).json({ message: 'Student is already registered' });
+            return res.status(409).json({ message: 'you are already registered' });
         }
 
         const newStudent = new Student(req.body);

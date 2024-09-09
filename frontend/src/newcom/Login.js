@@ -23,9 +23,9 @@ export default function Login() {
 
             const decodedToken = jwtDecode(token);
             if (decodedToken.role === 'admin') {
-                navigate('/admin'); // Redirect to admin page
+                navigate('/admin'); 
             } else {
-                navigate('/'); // Redirect to home page
+                navigate('/'); 
             }
 
             toast.success('Login successful!'); 
@@ -86,7 +86,7 @@ export default function Login() {
                     </Paper>
                 </Container>
             </Box>
-            <ToastContainer /> {/* Include ToastContainer */}
+            <ToastContainer /> 
         </>
     );
 }
