@@ -11,15 +11,15 @@ const Student = require('../models/student');
 // };
 const createStudent = async (req, res) => {
     try {
-        const { name } = req.body;
+        const { fullName, churchName } = req.body;
 
-        // Check if a student with the same name already exists
-        const existingStudent = await Student.findOne({ name });
+        // Check if a student with the same fullName and churchName already exists
+        const existingStudent = await Student.findOne({ fullName, churchName });
+
         if (existingStudent) {
-            return res.status(400).json({ message: "Student already registered" });
+            return res.status(409).json({ message: 'Student is already registered' });
         }
 
-        // Proceed with creating the new student
         const newStudent = new Student(req.body);
         await newStudent.save();
         res.status(201).json(newStudent);
@@ -27,6 +27,7 @@ const createStudent = async (req, res) => {
         res.status(400).json({ message: error.message });
     }
 };
+
 
 const getStudentsByClass = async (req, res) => {
     try {
