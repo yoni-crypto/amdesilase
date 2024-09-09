@@ -1,6 +1,6 @@
 .coursesContainer{
-    background-color: #f5f5f5;
-    padding: 5% 0%;
+    /* background-color: #f5f5f5; */
+    padding: 0% 0%;
 
 }
 .courses {
@@ -18,3 +18,25 @@
 .course-card:hover {
     transform: scale(1.05);
 }
+.coursesContainer {
+    /* padding: 30px 0; */
+    /* background-color: #f4f4f4;  A light background to distinguish the section */
+}
+
+.courses {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.course-card {
+    cursor: pointer;  /* Makes the card look interactive */
+    border-radius: 12px;  /* Slightly rounded corners for a modern look */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Smooth transition */
+}
+
+/* Active state when scrolling (similar to hover) */
+.course-card.active {
+    transform: scale(1.05);  /* Slight scale */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);  /* Elevated shadow */
+}
+

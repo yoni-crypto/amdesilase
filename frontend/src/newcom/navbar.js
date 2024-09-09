@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { AppBar, Toolbar, Typography, IconButton, Drawer, List, ListItem, ListItemText, Box, Button } from '@mui/material';
+import { AppBar, Toolbar, Typography, IconButton, Drawer, List, ListItem, ListItemText, Box } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { assets } from '../assets/assets';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import {jwtDecode} from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 
 const NewNavbar = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
@@ -58,7 +58,7 @@ const NewNavbar = () => {
     const drawerHeight = navLinks.length * 48;
 
     return (
-        <div style={{ backgroundColor: '#333' }}>
+        <div style={{ background: 'linear-gradient(45deg, #333, #555)' }}>
             <AppBar 
                 position="static" 
                 sx={{ 
@@ -74,7 +74,13 @@ const NewNavbar = () => {
                         alt="Logo"
                         style={{ width: 50, marginRight: '10px' }}
                     />
-                    <Typography variant="h6" sx={{ flexGrow: 1 }}>
+                    <Typography 
+                        variant="h6" 
+                        sx={{ 
+                            flexGrow: 1,
+                            color: '#fff' 
+                        }}
+                    >
                         ዓምደ ሥላሴ ሰንበት ትምህርት ቤት 
                     </Typography>
                     <Box sx={{ display: { xs: 'none', md: 'block' } }}>
@@ -85,9 +91,10 @@ const NewNavbar = () => {
                                 sx={{ 
                                     marginRight: { md: '25px', lg: '35px' },
                                     display: 'inline-block',
-                                    color: 'white',
+                                    color: '#fff',
                                     textDecoration: 'none',
                                     '&:hover': {
+                                        color: '#ffcc00',
                                         textDecoration: 'underline'
                                     }
                                 }}
@@ -124,13 +131,20 @@ const NewNavbar = () => {
                 >
                     <List>
                         {navLinks.map((link) => (
-                            <ListItem button key={link.path} component={link.path ? Link : 'span'} to={link.path} onClick={link.action}>
+                            <ListItem 
+                                button 
+                                key={link.path} 
+                                component={link.path ? Link : 'span'} 
+                                to={link.path} 
+                                onClick={link.action}
+                            >
                                 <ListItemText 
                                     primary={link.label} 
                                     sx={{ 
                                         color: 'white',
                                         textDecoration: 'none',
                                         '&:hover': {
+                                            color: '#ffcc00',
                                             textDecoration: 'underline'
                                         }
                                     }}
