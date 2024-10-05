@@ -15,8 +15,8 @@ const ComingSoon = () => {
                     minHeight: '100vh',
                     textAlign: 'center',
                     // backgroundImage: 'url(https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)',
-                    backgroundImage: 'url(https://as2.ftcdn.net/v2/jpg/07/95/41/63/1000_F_795416340_qbKmqOXo4qPY809URWKJaPxPtqly7ZRr.jpg)',
-
+                    backgroundImage: 'url(../assets/cross.png)',
+                    
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     color: '#fff',

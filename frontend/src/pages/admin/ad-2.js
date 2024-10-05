@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { createTheme } from '@mui/material/styles';
+import { useMediaQuery } from '@mui/material';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import LayersIcon from '@mui/icons-material/Layers';
 import { AppProvider } from '@toolpad/core/AppProvider';
@@ -48,34 +49,36 @@ const demoTheme = createTheme({
         values: {
             xs: 0,
             sm: 600,
-            md: 600,
+            md: 900,
             lg: 1200,
             xl: 1536,
         },
     },
 });
+
 const DemoPaper = styled(Paper)(({ theme }) => ({
-    width: 220,
+    width: '100%',
     height: 120,
     padding: theme.spacing(2),
     ...theme.typography.body2,
     textAlign: 'center',
+    [theme.breakpoints.up('sm')]: {
+        width: 220,
+    },
 }));
-
 
 function DemoPageContent({ pathname }) {
     const [totalStudents, setTotalStudents] = React.useState(0);
+    const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'));
 
     React.useEffect(() => {
         const fetchTotalStudents = async () => {
             try {
-                // const response = await axios.get('http://localhost:5000/api/admin/students/totalCount');
                 const response = await axios.get('https://amdesilase-api.vercel.app/api/admin/students/totalCount');
-
                 setTotalStudents(response.data.totalCount);
             } catch (error) {
                 console.error("Failed to fetch total student count", error);
-                toast.error("Failed to fetch total student count ")
+                toast.error("Failed to fetch total student count");
             }
         };
 
@@ -90,21 +93,23 @@ function DemoPageContent({ pathname }) {
     return (
         <Box
             sx={{
-                py: 4,
+                py: isMobile ? 2 : 4,
+                px: isMobile ? 2 : 4,
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
                 textAlign: 'center',
+                width: '100%',
             }}
         >
             {isDashboard ? (
-                <Stack direction="row" spacing={2}>
+                <Stack direction={isMobile ? 'column' : 'row'} spacing={2}>
                     <DemoPaper variant="elevation">Total Students: <br/><br/>{totalStudents}</DemoPaper>
                 </Stack>
             ) : className ? (
                 <StudentDataGrid className={className} />
             ) : (
-                <Typography variant="h4">Select a Class</Typography>
+                <Typography variant={isMobile ? 'h6' : 'h4'}>Select a Class</Typography>
             )}
         </Box>
     );
@@ -116,7 +121,6 @@ DemoPageContent.propTypes = {
 
 function DashboardLayoutBasic(props) {
     const { window } = props;
-
     const [pathname, setPathname] = React.useState('/dashboard');
 
     const router = React.useMemo(() => {
@@ -139,6 +143,7 @@ function DashboardLayoutBasic(props) {
             <DashboardLayout>
                 <DemoPageContent pathname={pathname} />
             </DashboardLayout>
+            <ToastContainer />
         </AppProvider>
     );
 }

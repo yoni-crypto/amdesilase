@@ -10,13 +10,13 @@ const app = express();
 
 // CORS middleware
 app.use(cors({
-  origin: 'https://amdesilase.vercel.app', // Allow your frontend URL
+  origin: ['https://amdesilase.vercel.app','http://localhost:3000'], 
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true, // Allow credentials (e.g., cookies)
   allowedHeaders: ['Content-Type', 'Authorization'], // Allow necessary headers
 }));
 app.get("/", (req, res) => { res.send("hello"); });
-app.options('*', cors());
+// app.options('*', cors());
 
 
 

@@ -48,6 +48,7 @@ const login = async (req, res) => {
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
+    
 };
 
 module.exports = { register, login };

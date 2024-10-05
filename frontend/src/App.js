@@ -8,18 +8,21 @@ import Newhome from './pages/Home/Newhome';
 
 function App() {
     const isAuthenticated = !!localStorage.getItem('token');
+    const userrole = localStorage.getItem('role');
+
+    const isAdmin = isAuthenticated && userrole === 'admin'
 
     return (
         <div className="App">
             <Routes>
-                <Route path='/' element={<Newhome/>} />
+                <Route path='/' element={<Newhome />} />
                 <Route path='/reg' element={<Signup />} />
                 <Route path='/register' element={<Register />} />
                 <Route path='/login' element={<Login />} />
-                <Route path='/comingsoon' element={<ComingSoon/>} />
+                <Route path='/comingsoon' element={<ComingSoon />} />
                 <Route
                     path='/admin'
-                    element={isAuthenticated ? <DashboardLayoutBasic /> : <Navigate to="/login" />}
+                    element={isAdmin ? <DashboardLayoutBasic /> : <Navigate to="/login" />}
                 />
             </Routes>
         </div>
