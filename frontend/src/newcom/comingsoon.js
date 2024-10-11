@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
-import NewNavbar from './navbar'; // Adjust the path based on your file structure
+import NewNavbar from './navbar';
+import crossImage from './cross.png';
 
 const ComingSoon = () => {
     return (
@@ -14,13 +15,17 @@ const ComingSoon = () => {
                     alignItems: 'center',
                     minHeight: '100vh',
                     textAlign: 'center',
-                    // backgroundImage: 'url(https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)',
-                    backgroundImage: 'url(../assets/cross.png)',
+                    // backgroundImage: 'url(https://previews.123rf.com/images/wangshuangpaul/wangshuangpaul2310/wangshuangpaul231000049/234348563-christian-wooden-cross-on-sunset-background.jpg)',
+                    backgroundImage: `url(${crossImage})`,
                     
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     color: '#fff',
                     padding: '20px',
+                    '@media (max-width: 720px)': {
+                        backgroundPosition: '-52% 0%', // Position the cross to the left on small screens
+                        backgroundSize: 'cover',  // Ensure the whole cross fits on small screens
+                    }
                 }}
             >
                 <Typography
@@ -29,21 +34,7 @@ const ComingSoon = () => {
                 >
                     በቅርቡ ይጠብቁን
                 </Typography>
-                {/* <Typography variant="h5" sx={{ marginBottom: '32px' }}>
-                    We're working hard to bring you something amazing. Stay tuned!
-                </Typography> */}
-                {/* 
-                <Button
-                    variant="contained"
-                    sx={{
-                        backgroundColor: '#ff4081',
-                        padding: '10px 20px',
-                        '&:hover': { backgroundColor: '#ff79a6' },
-                    }}
-                >
-                    Notify Me
-                </Button> 
-                */}
+                
             </Box>
         </>
     );

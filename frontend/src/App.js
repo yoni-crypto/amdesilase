@@ -5,12 +5,37 @@ import ComingSoon from './newcom/comingsoon';
 import Signup from './newcom/signup';
 import Login from './newcom/Login';
 import Newhome from './pages/Home/Newhome';
+import {jwtDecode} from 'jwt-decode';
+import { useState, useEffect } from 'react';
 
 function App() {
-    const isAuthenticated = !!localStorage.getItem('token');
-    const userrole = localStorage.getItem('role');
+    const [isAdmin, setIsAdmin] = useState(false);
+    const [loading, setLoading] = useState(true); 
+    const isAuthenticated = !!localStorage.getItem('token'); 
 
-    const isAdmin = isAuthenticated && userrole === 'admin'
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (isAuthenticated && token) {
+            try {
+                const decodedToken = jwtDecode(token);
+                if (decodedToken.role === 'admin') {
+                    setIsAdmin(true);
+                } else {
+                    setIsAdmin(false);
+                }
+            } catch (error) {
+                console.error('Invalid token');
+                setIsAdmin(false);
+            }
+        } else {
+            setIsAdmin(false);
+        }
+        setLoading(false);
+    }, [isAuthenticated]);
+
+    if (loading) {
+        return <div>Loading...</div>; 
+    }
 
     return (
         <div className="App">
@@ -22,7 +47,7 @@ function App() {
                 <Route path='/comingsoon' element={<ComingSoon />} />
                 <Route
                     path='/admin'
-                    element={isAdmin ? <DashboardLayoutBasic /> : <Navigate to="/login" />}
+                    element={isAdmin ? <DashboardLayoutBasic /> : <Navigate to="/login" />} // Redirect to login if not admin
                 />
             </Routes>
         </div>
